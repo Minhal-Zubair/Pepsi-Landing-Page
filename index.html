@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drink Landing Page</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <section class="sec">
+        <header>
+            <a href="#"><img src="logo.png" class="logo"></a>
+            <div class="toggleMenu" onclick="menuToggle();"></div>
+            <ul class="navigation">
+                <li><a href="http://">Home</a></li>
+                <li><a href="http://">Products</a></li>
+                <li><a href="http://">Blog</a></li>
+                <li><a href="http://">Contact</a></li>
+            </ul>
+            <div class="cart-icon">
+                <img src="cart.png" alt="Cart"> <span class="cart-count">0</span>
+            </div>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Experience the Refreshment<br><span>of Pure Enjoyment</span></h2>
+                <p>At <strong>Drink Co.</strong>, we bring you the finest beverages that excite your taste buds. Indulge
+                    in a selection of drinks crafted for every mood and occasion. From crisp sodas to refreshing juices,
+                    our drinks are designed to elevate your day.</p>
+                <a href="#">Browse Our Product Range</a>
+            </div>
+            <div class="imgBox">
+                <img src="pepsi001.png" class="pepsi">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="pepsi001.png" onClick="imgSlider('pepsi001.png');changeBgColor('#0062be')"></li>
+            <li><img src="pepsi002.png" onClick="imgSlider('pepsi002.png');changeBgColor('#e60c2c')"></li>
+            <li><img src="pepsi003.png" onClick="imgSlider('pepsi003.png');changeBgColor('#1e1e1e')"></li>
+        </ul>
+        <ul class="sci">
+            <li><a href="http://"><img src="facebook.png" alt=""></a></li>
+            <li><a href="http://"><img src="twitter.png" alt=""></a></li>
+            <li><a href="http://"><img src="instagram.png" alt=""></a></li>
+        </ul>
+    </section>
+
+    <div class="product-modal-overlay">
+        <div class="product-modal">
+            <span class="close-button">&times;</span>
+            <img src="" alt="Product Image" class="modal-product-img">
+            <h3 class="modal-product-title"></h3>
+            <p class="modal-product-description"></p>
+            <ul class="modal-nutritional-info">
+                <li>Calories: <span id="modal-calories"></span></li>
+                <li>Sugar: <span id="modal-sugar"></span></li>
+                <li>Volume: <span id="modal-volume"></span></li>
+            </ul>
+            <a href="#" class="modal-buy-button add-to-cart-btn">Add to Cart</a>
+        </div>
+    </div>
+
+    <div class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-item active">
+                <p>"Drink Co. beverages are my go-to for refreshing myself after a long day. The classic Pepsi is
+                    unbeatable!"</p>
+                <h4>- Jane Doe</h4>
+            </div>
+            <div class="testimonial-item">
+                <p>"Absolutely love the zero-sugar options. Pepsi Black is my favorite, full of flavor without the
+                    guilt."</p>
+                <h4>- John Smith</h4>
+            </div>
+            <div class="testimonial-item">
+                <p>"The Cherry Max is surprisingly delicious! Never thought I'd be a fan, but Drink Co. nailed it."</p>
+                <h4>- Emily White</h4>
+            </div>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+    </div>
+
+    </div>
+    <div class="newsletter-section">
+        <div class="newsletter-content">
+            <h2>Stay Up-to-Date with Drink Co.</h2>
+            <p>Subscribe to our newsletter for exclusive offers, new product announcements, and refreshing news delivered straight to your inbox!</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" id="emailInput" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe Now</button>
+            </form>
+            <p id="subscriptionMessage" class="subscription-message"></p>
+        </div>
+    </div>
+
+    <button id="backToTopBtn" title="Go to top">&#9650;</button>
+
+     <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Drink Co. Logo" class="footer-logo">
+                <p>&copy; 2025 Drink Co. All Rights Reserved.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Connect With Us</h4>
+                <ul>
+                    <li><a href="#"><img src="facebook.png" alt="Facebook"></a></li>
+                    <li><a href="#"><img src="twitter.png" alt="Twitter"></a></li>
+                    <li><a href="#"><img src="instagram.png" alt="Instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Designed with <span style="color: #e60c2c;">&#9829;</span> by Minhal Zubair</p>
+            <ul class="footer-legal-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

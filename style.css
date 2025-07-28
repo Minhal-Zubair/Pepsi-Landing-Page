@@ -1,0 +1,868 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0062be;
+    transition: 0.5s;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo{
+    position: relative;
+    max-width: 80px;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    display: inline-block;
+    color: #fff;
+    font-weight: 400;
+    margin-left: 40px;
+    text-decoration: none;
+}
+
+.content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .textBox{
+    position: relative;
+    max-width: 600px;
+}
+
+.content .textBox h2{
+    color: #fff;
+    font-size: 4em;
+    line-height: 1.5em;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.content .textBox h2 span{
+    font-size: 2em;
+}
+
+.content .textBox p{
+    color: #fff;
+}
+
+.content .textBox a{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #fff;
+    color: #111;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.content .imgBox{
+    width: 600px;
+    display: flex;
+    padding-right: 50px;
+    margin-top: 50px;
+    justify-content: flex-end;
+}
+
+.content .imgBox img{
+    max-width: 260px;
+}
+
+.thumb{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.thumb li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.thumb li:hover{
+    transform: translateY(-15px);
+}
+
+
+.thumb li img{
+    max-width: 40px;
+}
+
+.sci{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sci li{
+    list-style: none;
+}
+
+.sci li a{
+    display: inline-block;
+    filter: invert(1);
+    margin: 5px 0;
+    transform: scale(0.6);
+}
+@media (max-width:991px) {
+
+    section{
+        padding: 40px;
+        padding-bottom: 140px;
+    }
+
+    header{
+        padding: 40px;
+    }
+    header .logo{
+        position: relative;
+        max-width: 60px;
+    }
+
+    header ul{
+        position: fixed;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s ;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    header ul.active{
+        visibility: visible;
+        opacity: 1;
+    }
+
+    header ul li a {
+        display: inline-block;
+        color: #111;
+        font-weight: 400;
+        margin-left: 0;
+        text-decoration: none;
+        font-size: 2em;
+        margin: 10px 0;
+    }
+
+    header ul li a:hover {
+        color: #ed0223;
+    }
+
+    .toggleMenu{
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: url(menu.png);
+        background-position: center;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .toggleMenu.active{
+        background: url(close.png);
+        background-position: center;
+        background-size: 25px;
+        background-repeat: no-repeat;
+        filter: invert(1);
+    }
+
+    .content {
+        flex-direction: column;
+        margin-top: 80px;
+    }
+
+    .content .textBox {
+        position: relative;
+        max-width: 100%;
+        padding-right: 20px;
+    }
+
+    .content .textBox h2 {
+        color: #fff;
+        font-size: 3em;
+    }
+
+    .content .textBox a {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .content .imgBox {
+        width: 100%;
+        display: flex;
+        padding-right: 0;
+        margin-top: 50px;
+        justify-content: center;
+    }
+
+    .content .imgBox img {
+        max-width: 150px;
+    }
+
+    .thumb li img{
+        max-width: 30px;
+    }
+
+    .sci {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 50px;
+        background: rgba(0, 0, 0, 0.2);
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+/* Product Modal Overlay */
+.product-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s;
+}
+
+.product-modal-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Product Modal Content */
+.product-modal {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease-out;
+}
+
+.product-modal-overlay.active .product-modal {
+    transform: translateY(0);
+}
+
+.product-modal .close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+}
+
+.modal-product-img {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.modal-product-title {
+    color: #111;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.modal-product-description {
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.modal-nutritional-info {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    color: #666;
+    text-align: left;
+}
+
+.modal-nutritional-info li {
+    margin-bottom: 5px;
+}
+
+.modal-buy-button {
+    display: inline-block;
+    padding: 10px 25px;
+    background: #0062be; /* Use a default brand color or specific for modal */
+    color: #fff;
+    border-radius: 40px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.modal-buy-button:hover {
+    background: #004a9e;
+}
+
+/* Responsive adjustments for modal */
+@media (max-width: 991px) {
+    .product-modal {
+        padding: 20px;
+        max-width: 90%;
+    }
+    .modal-product-title {
+        font-size: 1.5em;
+    }
+    .modal-buy-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+.cart-icon {
+    position: relative;
+    margin-left: 40px; /* Adjust spacing as needed */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.cart-icon img {
+    max-width: 30px; /* Adjust icon size */
+    filter: invert(1); /* If your icon is black on transparent */
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #e60c2c; /* Red dot */
+    color: white;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 0.7em;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+}
+
+/* Adjust for mobile menu */
+@media (max-width:991px) {
+    .cart-icon {
+        margin-left: 0;
+        position: absolute; /* Adjust positioning for mobile */
+        top: 40px;
+        right: 100px;
+        z-index: 2; /* Ensure it's above other elements if needed */
+    }
+    .cart-icon img {
+        max-width: 25px;
+    }
+    .cart-count {
+        top: -5px;
+        right: -5px;
+        font-size: 0.6em;
+        padding: 2px 6px;
+    }
+}
+
+/* Testimonial Section - Updated to match vibrant theme */
+.testimonials {
+    text-align: center;
+    /* Reduce margin-top significantly or set to auto if no space is desired */
+    /* Try 40px first, or even 0 if you want it to touch */
+    margin-top: 40px; /* Adjust this value. You can try 0px for no gap. */
+    padding: 50px;
+    background: linear-gradient(135deg, rgba(0, 98, 190, 0.9), rgba(230, 12, 44, 0.9));
+    border-radius: 15px;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Optional: Add a subtle pattern or texture for more vibrancy */
+.testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml,%3Csvg width="6" height="6" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff" fill-opacity="0.1" fill-rule="evenodd"%3E%3Cpath d="M5 0h1L0 6V5zM6 5v1H5z"/%3E%3C/g%3E%3C/svg%3E'); /* Subtle white dot pattern */
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.testimonials h2 {
+    font-size: 2.8em; /* Slightly larger heading */
+    margin-bottom: 40px;
+    color: #fff; /* White heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add text shadow for pop */
+    position: relative;
+    z-index: 2; /* Ensure text is above pattern */
+}
+
+.testimonial-slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 180px; /* Increased height for more space/better readability */
+    position: relative;
+    z-index: 2;
+}
+
+.testimonial-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, transform 0.5s ease-out; /* Add transform for entry animation */
+    text-align: center;
+    transform: translateY(20px); /* Start slightly down */
+}
+
+.testimonial-item.active {
+    opacity: 1;
+    position: relative;
+    transform: translateY(0); /* Move to original position */
+}
+
+.testimonial-item p {
+    font-size: 1.3em; /* Slightly larger font for impact */
+    line-height: 1.8; /* Increased line height for readability */
+    margin-bottom: 25px; /* More space below text */
+    font-style: italic;
+    color: #f8f8f8; /* Off-white for body text */
+}
+
+.testimonial-item h4 {
+    font-size: 1.1em; /* Slightly larger name font */
+    font-weight: 700; /* Bolder name */
+    color: #ddd; /* Lighter white for name */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.slider-dots {
+    margin-top: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.dot {
+    height: 14px; /* Slightly larger dots */
+    width: 14px;
+    margin: 0 7px; /* More spacing between dots */
+    background-color: rgba(255, 255, 255, 0.4); /* Lighter, more transparent inactive dot */
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-out;
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Add a subtle border */
+}
+
+.dot:hover {
+    transform: scale(1.1); /* Subtle grow on hover */
+}
+
+.dot.active {
+    background-color: #fff; /* Pure white for active dot */
+    transform: scale(1.2); /* Make active dot stand out more */
+    border-color: #fff; /* Solid border for active dot */
+}
+
+/* Responsive adjustments for testimonials */
+@media (max-width: 991px) {
+    .testimonials {
+        padding: 30px;
+        margin-top: 60px;
+        border-radius: 10px; /* Adjust radius for mobile */
+    }
+    .testimonials h2 {
+        font-size: 2.2em;
+    }
+    .testimonial-item p {
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
+    .testimonial-slider {
+        height: 160px; /* Adjust height for mobile */
+    }
+    .dot {
+        height: 10px;
+        width: 10px;
+        margin: 0 4px;
+    }
+}
+
+/* Newsletter Section */
+.newsletter-section {
+     background: linear-gradient(to right, #00A9E0, #0061B0); /* A light background that stands out on white but doesn't conflict with gradient */
+    padding: 80px 100px;
+    text-align: center;
+    margin-top: 60px; /* Adjust margin to control space from previous section */
+    position: relative;
+    overflow: hidden; /* For any internal elements that might go outside */
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow at the top */
+}
+
+.newsletter-section .newsletter-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.newsletter-section h2 {
+    color: #fff; /* Dark heading for contrast */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-section p {
+    color: #f0f0f0; /* Dark gray for body text */
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between input and button */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.newsletter-form input[type="email"] {
+    flex-grow: 1; /* Allows input to take available space */
+    max-width: 400px;
+    padding: 15px 20px;
+    border: 2px solid #ccc;
+    border-radius: 40px; /* Rounded corners for modern look */
+    font-size: 1em;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.newsletter-form input[type="email"]:focus {
+    border-color: #0062be; /* Highlight border on focus */
+}
+
+.newsletter-form button[type="submit"] {
+    background: #e60c2c; /* Use your red brand color */
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 40px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.newsletter-form button[type="submit"]:hover {
+    background: #b30a23; /* Darker red on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.subscription-message {
+    margin-top: 20px;
+    font-size: 1em;
+    font-weight: 500;
+    color: #0062be; /* Use a brand color for feedback */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.subscription-message.show {
+    opacity: 1;
+}
+
+/* Responsive adjustments for Newsletter */
+@media (max-width: 991px) {
+    .newsletter-section {
+        padding: 50px 30px;
+        margin-top: 40px;
+    }
+    .newsletter-section h2 {
+        font-size: 2em;
+    }
+    .newsletter-section p {
+        font-size: 0.95em;
+    }
+    .newsletter-form {
+        flex-direction: column; /* Stack input and button vertically */
+        align-items: center;
+    }
+    .newsletter-form input[type="email"] {
+        max-width: 100%; /* Full width for input */
+        width: 100%;
+    }
+    .newsletter-form button[type="submit"] {
+        width: 100%; /* Full width for button */
+        max-width: 300px; /* Limit max width for button */
+    }
+}
+
+/* Footer Section */
+footer {
+    background: #1e1e1e; /* Dark background, matching one of your brand colors */
+    color: #f0f0f0; /* Light text color for contrast */
+    padding: 50px 100px 30px; /* Top, horizontal, bottom padding */
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping columns on smaller screens */
+    gap: 30px; /* Space between columns */
+    margin-bottom: 40px; /* Space above the bottom line */
+}
+
+.footer-brand {
+    flex: 1; /* Allow brand section to grow */
+    min-width: 200px; /* Minimum width before wrapping */
+}
+
+.footer-logo {
+    max-width: 70px; /* Adjust logo size */
+    /* filter: invert(1); Invert if your logo is originally dark to make it white */
+    margin-bottom: 15px;
+}
+
+.footer-content h4 {
+    color: #fff; /* White heading for clarity */
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-links, .footer-social {
+    flex: 1;
+    min-width: 150px; /* Minimum width for links/social sections */
+}
+
+.footer-links ul, .footer-social ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li, .footer-social ul li {
+    margin-bottom: 8px; /* Spacing between list items */
+}
+
+.footer-links ul li a {
+    color: #ccc; /* Lighter color for regular links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #0062be; /* Brand blue on hover */
+}
+
+.footer-social ul {
+    display: flex; /* Arrange social icons horizontally */
+    gap: 15px; /* Space between icons */
+}
+
+.footer-social ul li a img {
+    max-width: 28px; /* Size of social icons */
+    filter: invert(1); /* Invert if your icons are originally dark */
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.footer-social ul li a img:hover {
+    opacity: 1;
+    transform: translateY(-3px); /* Subtle lift on hover */
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator line */
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #ccc;
+}
+
+.footer-bottom .footer-legal-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+.footer-bottom .footer-legal-links li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom .footer-legal-links li a:hover {
+    color: #0062be;
+}
+
+/* Responsive adjustments for Footer */
+@media (max-width: 991px) {
+    footer {
+        padding: 40px 30px 20px;
+    }
+    .footer-content {
+        flex-direction: column; /* Stack columns vertically */
+        text-align: center;
+        gap: 40px;
+    }
+    .footer-brand, .footer-links, .footer-social {
+        min-width: unset; /* Remove min-width for stacking */
+        width: 100%; /* Take full width */
+    }
+    .footer-social ul {
+        justify-content: center; /* Center social icons when stacked */
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .footer-bottom .footer-legal-links {
+        flex-direction: column; /* Stack legal links vertically */
+        gap: 10px;
+    }
+}
+
+/* Back to Top Button - Redesigned */
+#backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position on the page */
+    bottom: 30px; /* Distance from bottom */
+    right: 30px; /* Distance from right */
+    z-index: 1000; /* Ensure it's above almost everything */
+
+    /* Shape and Sizing */
+    width: 50px; /* Fixed width */
+    height: 50px; /* Fixed height for perfect circle */
+    border-radius: 50%; /* Make it perfectly circular */
+    display: flex; /* Use flexbox to center content (the arrow) */
+    justify-content: center;
+    align-items: center;
+
+    /* Colors and Appearance */
+    background: #e60c2c; /* Your vibrant red brand color */
+    color: #fff; /* White arrow */
+    border: none; /* No border */
+    outline: none; /* No outline */
+    cursor: pointer; /* Pointer on hover */
+
+    /* Typography for the arrow */
+    font-size: 24px; /* Larger arrow for visibility */
+    font-weight: bold; /* Make the arrow bolder */
+    line-height: 1; /* Ensure perfect vertical centering for character arrow */
+
+    /* Shadows and Transitions */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(230, 12, 44, 0.4); /* Primary shadow + glowing effect */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    opacity: 0.9; /* Slightly transparent when idle */
+}
+
+#backToTopBtn:hover {
+    background: #b30a23; /* Darker red on hover */
+    transform: translateY(-3px); /* Lifts up slightly on hover */
+    opacity: 1; /* Fully opaque on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4), 0 0 0 8px rgba(230, 12, 44, 0.2); /* Stronger shadow + more prominent glow */
+}
+
+/* Responsive adjustments for the button */
+@media (max-width: 991px) {
+    #backToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px; /* Slightly smaller for mobile */
+        height: 45px;
+        font-size: 22px;
+    }
+    #backToTopBtn:hover {
+        transform: translateY(-2px); /* Less lift for mobile */
+    }
+}
+
